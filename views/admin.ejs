@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand mb-0 h1" style="margin-left: 2.5%; font-size:50px;">Netflix backend</span>
+    </nav>
+    <div style="display:flex; 
+    flex-direction: column;">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Language</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(var i = 0; i < users.length; i++) { %>
+                    <tr>
+                        <td><%= i + 1 %></td>
+                        <td><%= users[i].title %></td>
+                        <td><%= users[i].desc %></td>
+                        <td><%= users[i].genre %></td>
+                        <td><%= users[i].lang %></td>
+                        <td>
+                            <a href="/update?id=<%= users[i]._id%>" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</a>
+                        </td>
+                        <td>
+                            <a href="/delete?id=<%= users[i]._id%>" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</a>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <a href="/create" type="button" class="btn btn-outline-dark" style="margin-left: 8%; margin-right:5%; margin-top:2%; height:50px; font-size: 20px;">Create new entry</a>
+        <a href="/" type="button" class="btn btn-outline-dark" style="margin-left: 8%; margin-right:5%; margin-top:2%; height:50px; font-size: 20px; margin-bottom: 2.5%;">Back</a>
+    </div>
+</body>
+</html>
