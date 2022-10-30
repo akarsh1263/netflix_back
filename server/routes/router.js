@@ -14,6 +14,7 @@ route.get('/update', services.update)
 route.get('/api/entries', controller.entries);
 route.post('/api/saventry',controller.saventry);
 route.put('/api/entries/:id', controller.update);
+route.delete('/api/entries/:id', controller.delete);
 //route.delete('/api/users/:id', controller.delete);
 
 module.exports = route

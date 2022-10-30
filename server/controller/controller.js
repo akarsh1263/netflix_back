@@ -57,38 +57,6 @@ exports.entries=(req,res)=>{
             })
     }
 }
-// retrieve and return all users/ retrive and return a single user
-/*
-exports.find = (req, res)=>{
-
-    if(req.query.id){
-        const id = req.query.id;
-
-        Userdb.findById(id)
-            .then(data =>{
-                if(!data){
-                    res.status(404).send({ message : "Not found user with id "+ id})
-                }else{
-                    res.send(data)
-                }
-            })
-            .catch(err =>{
-                res.status(500).send({ message: "Erro retrieving user with id " + id})
-            })
-
-    }else{
-        Userdb.find()
-            .then(user => {
-                res.send(user)
-            })
-            .catch(err => {
-                res.status(500).send({ message : err.message || "Error Occurred while retriving user information" })
-            })
-    }
-
-    
-}
-*/
 // Update a new idetified user by user id
 exports.update = (req, res)=>{
     if(!req.body){
@@ -110,7 +78,6 @@ exports.update = (req, res)=>{
             res.status(500).send({ message : "Error Update user information"})
         })
 }
-/*
 // Delete a user with specified user id in the request
 exports.delete = (req, res)=>{
     const id = req.params.id;
@@ -131,4 +98,3 @@ exports.delete = (req, res)=>{
             });
         });
 }
-*/
