@@ -16,6 +16,7 @@
         <form style="margin-top: 5%;" method="POST" id="updateform">
             <div class="form-group">
               <label style="margin-left:5%; font-size: 20px;">Title</label>
+              <input type="hidden" name="id" value="<%= user._id %>">
               <input class="form-control" style="margin-left:5%; margin-top:1%; width: 95%;" placeholder="Enter title" name="title" id="title" value="<%= user.title %>" required>
             </div>
             <div class="form-group">

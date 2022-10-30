@@ -18,5 +18,4 @@ $("#updateform").submit(function(event){
     $.ajax(request).done(function(response){
         alert("Data Updated Successfully!");
     })
-
 })
