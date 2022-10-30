@@ -10,12 +10,12 @@ route.get('/users',services.userer);
 route.get('/create', services.create)
 route.get('/update', services.update)
 route.get('/allentries',services.allentries);
+route.get('/genre',services.genre);
+route.get('/genrentries',services.genrentries);
 // API
-//route.post('/api/entries', controller.entries);
 route.get('/api/entries', controller.entries);
 route.post('/api/saventry',controller.saventry);
 route.put('/api/entries/:id', controller.update);
 route.delete('/api/entries/:id', controller.delete);
-//route.delete('/api/users/:id', controller.delete);
 
 module.exports = route

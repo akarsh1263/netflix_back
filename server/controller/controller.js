@@ -47,6 +47,20 @@ exports.entries=(req,res)=>{
             })
 
     }
+    else if(req.query.genre){
+        const genre_in=req.query.genre;
+        Userdb.find({genre:genre_in})
+        .then(data =>{
+            if(!data){
+                res.status(404).send({ message : "Not found user with id "+ id})
+            }else{
+                res.send(data)
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message: "Erro retrieving user with id " + id})
+        })
+    }
     else{
     Userdb.find()
             .then(user => {
