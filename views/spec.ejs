@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spec</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand mb-0 h1" style="margin-left: 2.5%; font-size:50px;">Netflix backend</span>
+    </nav>
+    <div style="display:flex; 
+    flex-direction: column;">
+        <form style="margin-top: 5%;" action="/specentries" method="get">
+            <div class="form-group">
+              <label style="margin-left:5%; font-size: 20px;">Title</label>
+              <input class="form-control" style="margin-left:5%; margin-top:1%; width: 95%;" placeholder="Enter title" name="title" id="title" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-left:5%; margin-top:2.5%;">Submit</button>
+        </form>
+        <a href="/users" type="button" class="btn btn-outline-dark" style="margin-left: 8%; margin-right:5%; margin-top:2%; height:50px; font-size: 20px; margin-bottom: 2.5%;">Back</a>
+    </div>
+</body>
+</html>

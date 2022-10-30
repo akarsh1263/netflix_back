@@ -11,7 +11,9 @@ route.get('/create', services.create)
 route.get('/update', services.update)
 route.get('/allentries',services.allentries);
 route.get('/genre',services.genre);
+route.get('/spec',services.spec);
 route.get('/genrentries',services.genrentries);
+route.get('/specentries',services.specentries);
 // API
 route.get('/api/entries', controller.entries);
 route.post('/api/saventry',controller.saventry);

@@ -18,8 +18,20 @@ exports.allentries=(req,res)=>{
 exports.genre=(req,res)=>{
     res.render('genre');
 }
+exports.spec=(req,res)=>{
+    res.render('spec');
+}
 exports.genrentries=(req,res)=>{
     axios.get('http://localhost:3000/api/entries', { params : { genre : req.query.genre }})
+        .then(function(response){
+            res.render('allentries',{users:response.data});
+        })
+        .catch(err=>{
+            res.send(err);
+        });
+}
+exports.specentries=(req,res)=>{
+    axios.get('http://localhost:3000/api/entries', { params : { title : req.query.title }})
         .then(function(response){
             res.render('allentries',{users:response.data});
         })

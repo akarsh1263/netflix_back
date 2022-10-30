@@ -61,6 +61,20 @@ exports.entries=(req,res)=>{
             res.status(500).send({ message: "Erro retrieving user with id " + id})
         })
     }
+    else if(req.query.title){
+        const title_in=req.query.title;
+        Userdb.find({title:title_in})
+        .then(data =>{
+            if(!data){
+                res.status(404).send({ message : "Not found user with id "+ id})
+            }else{
+                res.send(data)
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message: "Erro retrieving user with id " + id})
+        })
+    }
     else{
     Userdb.find()
             .then(user => {
